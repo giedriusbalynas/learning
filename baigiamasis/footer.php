@@ -28,7 +28,7 @@
 
       </div>
       <hr class="light">
-      <a href="privacy-policy.html" class="text-light" style="text-decoration: none;">Privacy policy</a>
+      <a href="privacy-policy.php" class="text-light" style="text-decoration: none;">Privacy policy</a>
 
     </div>
     <div class="col-12 pb-3">

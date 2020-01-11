@@ -18,7 +18,7 @@
 
   <!-- Navbaras -->
   <nav class="container-fluid navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-    <a class="navbar-brand ml-3" href="index.html">
+    <a class="navbar-brand ml-3" href="index.php">
       <img src="image/logo.png" width="40" height="40" alt="CoolShopLogo">
     </a>
     <form class="form-inline w-75">
@@ -32,17 +32,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item aukstis-50 pt-1">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active aukstis-50 pt-1">
-          <a class="nav-link " href="browse.html">Browse</a>
+          <a class="nav-link " href="browse.php">Browse</a>
         </li>
         <li class="nav-item dropdown aukstis-50 pt-1">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             About
           </a>
           <div class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="index.html#to-about">About Us</a>
+            <a class="dropdown-item" href="index.php#to-about">About Us</a>
             <a class="dropdown-item" href="#">License agreement</a>
 
             <div class="dropdown-divider"></div>
