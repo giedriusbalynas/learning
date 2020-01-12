@@ -1,4 +1,5 @@
 <?php
+
 //CRUD
 //grazina konkretu gydytojo duomenis is DB
 //$nr - grazina norimo gydytojo 'id' is DB
@@ -53,8 +54,8 @@ function deletePreke($nr){
     echo "ERROR: Nepavyko istrinti $nr gydytojo is DB <br>";
   }
 }
- // deletePreke(12);
-function updatePreke ($nr, $pavadinimas, $aprasymas, $kaina, $kiekis, $nuolaida){
+ // deletePreke(1);
+function updatePreke($nr, $pavadinimas, $aprasymas, $kaina, $kiekis, $nuolaida){
   $nr = htmlspecialchars($nr, ENT_QUOTES);
   $pavadinimas = htmlspecialchars($pavadinimas, ENT_QUOTES); //saugumui; uzkoduoja zenklus.
   $aprasymas = htmlspecialchars($aprasymas, ENT_QUOTES); //saugumui; uzkoduoja zenklus.

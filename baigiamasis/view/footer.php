@@ -3,7 +3,7 @@
   <div class="row text-center">
     <div class="col-md-6">
       <div class="flex justify-content-center pt-4">
-        <img src="image/logo.png" width="40" height="40" alt="CoolShopLogo">
+        <img src="../image/logo.png" width="40" height="40" alt="CoolShopLogo">
         <h4 class="px-2 ">Contacts</h4>
       </div>
       <hr class="light">
@@ -37,10 +37,10 @@
     </div>
   </div>
 </footer>
-<script type="text/javascript" src="libs/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="libs/bootstrap/js/bootstrap.bundle.min.js"> </script>
+<script type="text/javascript" src="../libs/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../libs/bootstrap/js/bootstrap.bundle.min.js"> </script>
 <!-- MANO JS pats zemiausias -->
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 
 </body>
 

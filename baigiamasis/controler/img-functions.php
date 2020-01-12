@@ -1,4 +1,5 @@
 <?php
+
 //CRUD
 //grazina konkretu gydytojo duomenis is DB
 //$nr - grazina norimo gydytojo 'id' is DB
@@ -51,7 +52,7 @@ function deleteImg($nr){
     echo "ERROR: Nepavyko istrinti $nr gydytojo is DB <br>";
   }
 }
- // deletePreke(12);
+ // deleteImg(15);
 function updateImg ($nr, $prekes_id, $pavadinimas, $alt){
   $nr = htmlspecialchars($nr, ENT_QUOTES);
   $prekes_id = htmlspecialchars($prekes_id, ENT_QUOTES); //saugumui; uzkoduoja zenklus.

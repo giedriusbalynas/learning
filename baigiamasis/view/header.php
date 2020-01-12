@@ -6,12 +6,12 @@
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
 
   <!-- MANO CSS visada pats zemiausias!!! -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
   <!-- Navbaras -->
   <nav class="container-fluid navbar navbar-expand-md navbar-dark bg-dark sticky-top">
     <a class="navbar-brand ml-3" href="index.php">
-      <img src="image/logo.png" width="40" height="40" alt="CoolShopLogo">
+      <img src="../image/logo.png" width="40" height="40" alt="CoolShopLogo">
     </a>
     <form class="form-inline w-75">
       <input class="form-control mr-2 w-50" type="search" placeholder="Search" aria-label="Search">
@@ -50,7 +50,9 @@
           </div>
           <br>
         </li>
-
+        <li class="nav-item">
+          <a href="prekiuKrepselis.php" class="fa fa-shopping-cart btn-sm active alink1 text-light" role="button" aria-pressed="true"></a>
+        </li>
         <li class="nav-item padding-8">
           <div class="dropdown ">
             <button class="btn btn-light btn-sm dropdown-toggle active" aria-pressed="true" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>

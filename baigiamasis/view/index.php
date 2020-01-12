@@ -8,21 +8,21 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="image/open.jpg" class="d-block w-100" alt="Always open">
+        <img src="../image/open.jpg" class="d-block w-100" alt="Always open">
         <div class="carousel-caption d-none d-md-block">
           <h1 class="display-2">We are always open for business</h1>
           <p>You dont have to wait until the opening hours, because we are always open!</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="image/queue.jpg" class="d-block w-100" alt="No queues">
+        <img src="../image/queue.jpg" class="d-block w-100" alt="No queues">
         <div class="carousel-caption d-none d-md-block">
           <h1 class="display-2">You are first in line</h1>
           <p>You won't be needing to wait in queues for your purchase because there is no queues, you are first in line!</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="image/variety.jpg" class="d-block w-100" alt="Large variety">
+        <img src="../image/variety.jpg" class="d-block w-100" alt="Large variety">
         <div class="carousel-caption d-none d-md-block text-light bg-secondary">
           <h1 class="display-2">Large variety of goods</h1>
           <p>We have large variety of goods for sale, you can choose the perfect item for your taste</p>
