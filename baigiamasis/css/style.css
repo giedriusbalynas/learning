@@ -57,8 +57,18 @@ hr.light {
   width: 350px;
   height: 300px;
 }
+.inputo-plotis{
+  width: 50px;
+}
+.inputo-plotis-40px{
+  width: 40px;
+}
 ul {
   list-style-type: none;
+}
+#krepselis-img {
+  width: 100px;
+  height: 100px;
 }
 #preke-img {
   width: 150px;

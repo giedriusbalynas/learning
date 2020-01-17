@@ -4,9 +4,12 @@
       include('../controler/prisijungimas.php');
       include('../controler/preke-functions.php');
       include('../controler/img-functions.php');
-      $id = $_GET['x'];
-      $preke = getPreke($id);
-      $image = getImg($id);
+
+      $prekesSes = $_SESSION['vezimelis'];
+      if(isset($_SESSION['vezimelis'])){
+        $kiekis = 0;
+        $suma = 0;
+
 ?>
 
 <!-- prekiu katalogas -->
@@ -28,26 +31,63 @@
       </ul>
   </aside>
   <main class="col m-4 p-2">
+    <?php print_r($prekesSes) ?>
       <h2 class="text-center">Prekiu krepselis</h2>
       <table class="bg-light m-4 p-2 float-left border border-dark" id="prekes">
         <tr class="border border-dark">
+          <th></th>
           <th>Nuotrauka</th>
           <th>Pavadinimas</th>
+          <th>Kaina</th>
           <th>Kiekis</th>
           <th>Suma</th>
-          <th>Data</th>
-
+          <th>-</th>
         </tr>
+    <?php
+    $k = 0;
+
+      foreach ($prekesSes as $prekesSes):
+        $suma = $prekesSes['kiekis']*$prekesSes['kaina'];
+
+
+		?>
         <tr>
-          <td><img src="../image/prekes/<?php echo $image['pav'] ?>" alt="<?php echo $image['alt'] ?>"> </td>
-          <td><?php print_r( $_SESSION['vezimelis']) ?></td>
-          <td>kiekis</td>
-          <td>suma</td>
-          <td>data</td>
+          <td><input id="inputas" type="hidden" name="sesijos-prekes-id" value="<?php echo $k ?>"> </td>
+          <td><img id="krepselis-img" src="../image/prekes/<?php echo $prekesSes['pav'] ?>" alt="<?php echo $prekesSes['alt'] ?>"> </td>
+          <td><?php echo $prekesSes['pavadinimas'] ?></td>
+          <td><?php echo $prekesSes['kaina'] ?></td>
+          <td>
+            <input class="textbox inputo-plotis-40px" type="number" name='kiekis' value="<?php echo $prekesSes['kiekis'] ?>" min="1">
+          </td>
+          <td><?php echo $suma ?></td>
+          <td></td>
         </tr>
-      </table>
+      <!-- </table> -->
+      <?php
+      $kiekis += $prekesSes["kiekis"];
+      $suma += ($prekesSes["kaina"]*$prekesSes["kiekis"]);
+      $k++;
+      endforeach ?>
+        <tr class="border border-dark">
+          <td></td>
+          <td colspan="3" align="right"><strong>Viso:</strong></td>
+          <td align="" colspan="1"><?php echo $kiekis; ?></td>
+          <td align="" colspan="1"><strong><?php echo "&euro; ".number_format($suma, 2); ?></strong></td>
+          <td></td>
 
 
+        </tr>
+        </table>
+          <?php
+        } else {
+        ?>
+        <div class="no-records">Your Cart is Empty</div>
+        <?php
+        }
+
+          // echo "!!!!prekes kiekis: ". $prekesSes['kiekis'];
+        ?>
+        </div>
 
   </main>
 </div>

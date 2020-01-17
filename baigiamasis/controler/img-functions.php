@@ -94,3 +94,16 @@ function getAllImg ($limit = 999999) {
 //   //is visu paimam sekanti gydytoja:
 //   $gyd = mysqli_fetch_assoc($gydytojai);
 //}
+function getImgById($nr){
+  //visada SQL koda pratestuot terminale!!!!
+  $manoSQL = "SELECT * FROM img WHERE id = '$nr' "; //nepamirst ant variable kabuciu uzdet!
+  $rezultataiMysqlObjekt = mysqli_query(getPrisijungimas(), $manoSQL);
+  //test
+  // print_r ($rezultataiMysqlObjekt);
+  //is mysqli objekto paimame viena eilute ir paverciam i array.
+  $rezultataiArray = mysqli_fetch_assoc($rezultataiMysqlObjekt);
+  // echo "<hr>";
+  //test
+  //print_r ($rezultataiArray);
+  return $rezultataiArray;
+}

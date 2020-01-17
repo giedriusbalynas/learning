@@ -4,6 +4,8 @@
         include('../controler/prisijungimas.php');
         include('../controler/preke-functions.php');
         include('../controler/img-functions.php');
+
+
   ?>
 
   <!-- prekiu katalogas -->
@@ -32,25 +34,27 @@
       <?php
           $prekes = getPrekes();
           $preke = mysqli_fetch_assoc($prekes);
-          $image = getAllImg();
-          $img = mysqli_fetch_assoc($image);
+
           while ($preke){
+          $fotos = getImg($preke['id']);
        ?>
         <div class="bg-light laikinas m-4 p-2 float-left border border-dark rounded-lg">
           <div class="d-flex justify-content-end">
             <a href="prekeRedaguoti.php?x=<?php echo $preke['id'] ?>" class="fa fa-pencil text-dark alink1 p-2"></a> <?php // IDEA: edit preke ?>
             <a href="../controler/prekeDelete.php?x=<?php echo $preke['id'] ?>" class="fa fa-trash-o text-dark alink1 p-2"></a> <?php // IDEA: delete preke ?>
           </div>
-            <a href="preke.php?x=<?php echo $preke['id'] ?>" class="alink1 text-dark"><h3 class=""><?php echo $preke['pavadinimas'] ?></h3></a>
-            <img id="preke-img" class="float-left" src="../image/prekes/<?php echo $img['pav'] ?>" alt="<?php echo $img['alt'] ?>">
+            <a href="preke.php?x=<?php echo $preke['id'] ?>" class="alink1 text-dark">
+              <h3 class=""><?php echo $preke['pavadinimas'] ?></h3>
+            </a>
+            <img id="preke-img" class="float-left" src="../image/prekes/<?php echo $fotos['pav'] ?>" alt="<?php echo $fotos['alt'] ?>">
             <p class=" "><?php echo $preke['aprasymas'] ?></p>
+            <input class="inputo-plotis" type="number" name='kiekis' value="1" min="1">
             <div class="d-flex justify-content-end mr-2 float-stop">
-              <a href="../controler/prekiuKrepselisAdd.php" class="btn btn-outline-dark fa fa-shopping-cart"> <?php echo $preke['kaina'] ?>&euro;</a>
+              <a href="../controler/prekiuKrepselisAdd.php?x=<?php echo $preke['id'] ?>" class="kiekis-input btn btn-outline-dark fa fa-shopping-cart"> <?php echo $preke['kaina'] ?>&euro;</a>
             </div>
         </div>
           <?php
             $preke = mysqli_fetch_assoc($prekes);
-            $img = mysqli_fetch_assoc($image);
             };
          ?>
       </div>
