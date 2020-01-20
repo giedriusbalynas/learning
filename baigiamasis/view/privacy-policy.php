@@ -46,14 +46,14 @@
                         <p>The purposes for which Sendinblue processes data are the following:</p>
                         <br>
                         <ul>
-                            <li>commercial and accounting management of the contract;</li>
-                            <li>management of customer acquisition and marketing activities;</li>
-                            <li>detection of malicious behaviour (fraud, phishing, spam, etc.);</li>
-                            <li>the improvement of the Users path on the site;</li>
-                            <li>more generally, any purpose referred to in Article 2 of Deliberation No. 2012-209 of 21
+                            <li>-commercial and accounting management of the contract;</li>
+                            <li>-management of customer acquisition and marketing activities;</li>
+                            <li>-detection of malicious behaviour (fraud, phishing, spam, etc.);</li>
+                            <li>-the improvement of the Users path on the site;</li>
+                            <li>-more generally, any purpose referred to in Article 2 of Deliberation No. 2012-209 of 21
                                 June 2012
                             </li>
-                            <li>creating a simplified standard for the automated processing of personal data relating to
+                            <li>-creating a simplified standard for the automated processing of personal data relating to
                                 the management of users and prospects.
                             </li>
                         </ul>

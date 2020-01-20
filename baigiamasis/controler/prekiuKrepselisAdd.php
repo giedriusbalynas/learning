@@ -7,8 +7,8 @@
       $id_y=$_GET['y'];
       $preke = getPreke($id);
       $image = getImg($id);
-      // print_r ($preke);
       $vezimelioArray = [
+        "id" => $preke['id'],
         "pav"=>$image['pav'],
         "alt"=>$image['alt'],
         "pavadinimas"=>$preke['pavadinimas'],
@@ -17,10 +17,4 @@
       ];
       $count = count($_SESSION['vezimelis']);
       $_SESSION['vezimelis'][$count] = $vezimelioArray;
-
-
-
-     // array_push($_SESSION['vezimelis'], $vezimelioArray);
-      // print_r($vezimelioArray);
-     // session_destroy();
-     header("location: ../view/browse.php");
+      header("location: ../view/browse.php");

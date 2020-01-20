@@ -1,9 +1,13 @@
+<?php
+// include()
+session_start();
+ ?>
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>CoolShop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="../css/normalize.css">
@@ -21,8 +25,8 @@
     <a class="navbar-brand ml-3" href="index.php">
       <img src="../image/logo.png" width="40" height="40" alt="CoolShopLogo">
     </a>
-    <form class="form-inline w-75">
-      <input class="form-control mr-2 w-50" type="search" placeholder="Search" aria-label="Search">
+    <form class="form-inline w-75" action="search.php" method="POST">
+      <input class="form-control mr-2 w-50" name="query" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
     </form>
 
@@ -44,26 +48,47 @@
           <div class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="index.php#to-about">About Us</a>
             <a class="dropdown-item" href="#">License agreement</a>
-
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" id="contacts" href="#">Contact Us</a>
           </div>
           <br>
         </li>
-        <li class="nav-item">
-          <a href="prekiuKrepselis.php" class="fa fa-shopping-cart btn-sm active alink1 text-light" role="button" aria-pressed="true"></a>
-        </li>
-        <li class="nav-item padding-8">
-          <div class="dropdown ">
+
+        <?php
+        if (isset($_SESSION['user']) && !empty($_SESSION['user'])){  ?>
+          <li class="nav-item loged">
+            <a href="prekiuKrepselis.php" class="fa fa-shopping-cart btn-sm active alink1 text-light" role="button" aria-pressed="true"></a>
+          </li>
+          <li class="nav-item dropdown dropleft loged">
+            <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hi, <?php echo $_SESSION['user']['name'] ?>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="yourOrders.php">Your orders</a>
+              <a class="dropdown-item" href="editProfile.php">Edit profile</a>
+              <a class="dropdown-item" href="changePw.php">Change password</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../controler/logout.php">Log out</a>
+            </div>
+          </li>
+        <!-- <script>
+        // document.getElementsByClassName("not-loged").style.display = "none";
+        // document.getElementsByClassName("loged").style.display = "show";
+        // </script> -->
+        <?php }
+        else {  ?>
+        <li class="nav-item padding-8 not-loged">
+          <div class="dropdown dropleft">
             <button class="btn btn-light btn-sm dropdown-toggle active" aria-pressed="true" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
-            <form class="dropdown-menu p-4">
+            <form class="dropdown-menu p-3" method="post">
               <div class="form-group">
-                <label for="Email2">Email address</label>
-                <input type="email" class="form-control" id="Email2" placeholder="Email">
+                <label for="email-login">Email address</label>
+                <input type="email" class="form-control plotis-200" id="email-login" placeholder="Email">
+                <li id="msg_email_login"></li>
               </div>
               <div class="form-group ">
-                <label for="Password2">Password</label>
-                <input type="password" class="form-control" id="Password2" placeholder="Password">
+                <label for="password-login">Password</label>
+                <input type="password" class="form-control" id="password-login" placeholder="Password">
               </div>
               <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="dropdownCheck2">
@@ -71,13 +96,23 @@
                   Remember me
                 </label>
               </div>
-              <button type="submit" class="btn btn-secondary">Sign in</button>
+              <button id="login" type="submit" class="btn btn-secondary">Sign in</button>
             </form>
           </div>
         </li>
-        <li class="nav-item padding-8">
-          <a href="register.html" class="btn btn-secondary btn-sm active px-0 mr-1 plotis-65" role="button" aria-pressed="true">Sign-up</a>
+        <li class="nav-item padding-8 not-loged">
+          <a href="register.php" class="btn btn-secondary btn-sm active px-0 mr-1 plotis-65" role="button" aria-pressed="true">Sign-up</a>
         </li>
+        <script>
+        // document.getElementsByClassName("loged").style.display = "none";
+        // document.getElementsByClassName("not-loged").style.display = "show";
+        </script>
+
+        <?php
+      }
+      ?>
+
+
       </ul>
     </div>
   </nav>

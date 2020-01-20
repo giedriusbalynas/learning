@@ -28,6 +28,9 @@ hr.light {
 .lygiav {
   margin-top: 80px;
 }
+.plotis-200{
+  width: 200px
+}
 .plotis-65 {
   width: 65px;
 }
@@ -62,6 +65,14 @@ hr.light {
 }
 .inputo-plotis-40px{
   width: 40px;
+}
+.plotis-80px{
+  width: 80px;
+}
+li {
+  padding: 0;
+  list-style-type: none;
+  background-color: none;
 }
 ul {
   list-style-type: none;
